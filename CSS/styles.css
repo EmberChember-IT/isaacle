@@ -1,0 +1,76 @@
+ /*html,body {
+    background: url(assets/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
+
+
+h1 {
+    font-family: "Rubik Scribble";
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 16em
+}
+
+input{
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;
+    font-size: 30px;
+
+}
+.character-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 15cm;
+    margin-right: 15cm;
+
+
+}
+
+.character-info p {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    width: 8em;
+    height: 5em;
+}
+
+.character-info p.red {
+    background-color: #ff8080; /* красный цвет для несовпадающих параметров */
+}
+
+.character-info p.green {
+    background-color: #80ff80; /* зеленый цвет для полного совпадения параметров */
+}
+
+.character-info p.yellow {
+    background-color: #ffff80; /* желтый цвет для частичного совпадения параметров */
+}
+
+/* Скрыть треугольник выпадающего списка */
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* Установить поле ввода в режим "только для чтения" */
+input[readonly] {
+    background-color: white;
+    cursor: default;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+}

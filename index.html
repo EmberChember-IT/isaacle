@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>isaacle</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1> Угадай персонажа из игры <br />The binding of Isaac:Repentance</h1>
+<label for="ent"></label>
+<input type="text" id="ent" placeholder="Введите имя персонажа" list="characterList" onfocus="showCharacterList()">
+<datalist id="characterList">
+    <option value="Isaac">
+    <option value="Magdalene">
+    <option value="Cain">
+    <option value="Judas">
+    <option value="???">
+    <option value="Eve">
+    <option value="Samson">
+    <option value="Azazel">
+    <option value="Lazarus">
+    <option value="Eden">
+    <option value="The Lost">
+    <option value="Lilith">
+    <option value="Keeper">
+    <option value="Apollyon">
+    <option value="The Forgotten">
+    <option value="Bethany">
+    <option value="Jacob and Esau">
+    <option value="Tainted Isaac">
+    <option value="Tainted Magdalene">
+    <option value="Tainted Cain">
+    <option value="Tainted Judas">
+    <option value="Tainted ???">
+    <option value="Tainted Eve">
+    <option value="Tainted Samson">
+    <option value="Tainted Azazel">
+    <option value="Tainted Lazarus">
+    <option value="Tainted Eden">
+    <option value="Tainted Lost">
+    <option value="Tainted Lilith">
+    <option value="Tainted Keeper">
+    <option value="Tainted Apollyon">
+    <option value="Tainted Forgotten">
+    <option value="Tainted Bethany">
+    <option value="Tainted Jacob">
+</datalist>
+
+<div id="entry-info" class="character-info"></div>
+<div id="rndm-info" class="character-info"></div>
+<div id="entry-info-start" class="character-info"></div>
+<div id="all-entry-info"></div>
+
+<table border="1">
+
+    <tr>
+
+        <th>Зеленый</th><th>Желтый</th><th>Красный</th>
+
+    </tr>
+
+    <tr>
+
+        <td>Верно</td><td>Частино верно</td><td>Неверно</td>
+
+    </tr>
+
+    <tr>
+
+        <td><img src="/assets/green.png" alt=""></td><td><img src="/assets/yellow.png" alt=""></td><td><img src="/assets/red.png" alt=""></td>
+
+    </tr>
+
+</table>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
