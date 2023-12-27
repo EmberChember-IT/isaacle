@@ -278,6 +278,7 @@ const characters = [
 ];
 
 //export default characters;
+exports.characters = characters
 
 // Пример доступа к атрибутам первого персонажа
 //console.log(characters[0].character); // Выведет "Персонаж 1"
