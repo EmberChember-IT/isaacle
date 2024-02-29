@@ -17,6 +17,14 @@ h1 {
     width: 16em
 }
 
+/* Путь если на сервере будет, надо поменять будет */ 
+
+body {
+  background-image: url(C:\Users\Computer 2.0\Documents\GitHub\isaacle\assets\background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 input{
     display: flex;
     text-align: center;
