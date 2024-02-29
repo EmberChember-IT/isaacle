@@ -20,7 +20,7 @@ h1 {
 /* Путь если на сервере будет, надо поменять будет */ 
 
 body {
-  background-image: url(C:\Users\Computer 2.0\Documents\GitHub\isaacle\assets\background.png);
+  background-image: url(file:///C:/Users/Computer%202.0/Documents/GitHub/isaacle/assets/background.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
