@@ -32,7 +32,9 @@ input{
     margin-right: auto;
     width: 15em;
     font-size: 30px;
-
+    background-image: url(file:///C:/Users/Computer%202.0/Documents/GitHub/isaacle/assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .character-info {
     display: flex;
