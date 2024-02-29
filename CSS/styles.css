@@ -84,3 +84,16 @@ input[readonly] {
     overflow: hidden;
     position: absolute;
 }
+
+.green-img{
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.red-img{
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.yellow-img{
+	background-repeat: no-repeat;
+    background-size: cover;
+}
