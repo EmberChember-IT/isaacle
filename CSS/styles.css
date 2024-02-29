@@ -17,10 +17,10 @@ h1 {
     width: 16em
 }
 
-/* Путь если на сервере будет, надо поменять будет */ 
+/* Путь если на сервере будет, надо поменять будет file:///C:/Users/Computer%202.0/Documents/GitHub/isaacle/assets/background.png*/ 
 
 body {
-  background-image: url(file:///C:/Users/Computer%202.0/Documents/GitHub/isaacle/assets/background.png);
+  background-image: url(https://i.imgur.com/7xgWNSh.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -32,7 +32,7 @@ input{
     margin-right: auto;
     width: 15em;
     font-size: 30px;
-    background-image: url(file:///C:/Users/Computer%202.0/Documents/GitHub/isaacle/assets/background.png);
+    background-image: url(https://i.imgur.com/7xgWNSh.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
