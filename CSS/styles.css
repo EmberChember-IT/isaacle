@@ -85,15 +85,15 @@ input[readonly] {
     position: absolute;
 }
 
-.green-img{
-	background-repeat: no-repeat;
-    background-size: cover;
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.red-img{
-	background-repeat: no-repeat;
-    background-size: cover;
-}
-.yellow-img{
+
+.image{
 	background-repeat: no-repeat;
     background-size: cover;
 }
