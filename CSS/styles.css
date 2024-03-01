@@ -86,8 +86,6 @@ input[readonly] {
 }
 
 .container {
-  border: 1px solid black;
-  border-collapse: collapse;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -95,7 +93,7 @@ input[readonly] {
   align-items: center;
 }
 
-.image {
-  width: 150px; /* задайте ширину и высоту по вашему выбору */
-  height: 150px;
+.image{
+	background-repeat: no-repeat;
+    background-size: cover;
 }
