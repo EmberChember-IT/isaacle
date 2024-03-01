@@ -109,4 +109,12 @@ input[readonly] {
 
 .image{
   object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+tr {
+    font-size: 15px;
+	color: white;
 }
