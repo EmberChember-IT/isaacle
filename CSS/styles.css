@@ -93,7 +93,9 @@ input[readonly] {
   align-items: center;
 }
 
-.image{
-	background-repeat: no-repeat;
-    background-size: cover;
+.image {
+  width: 150px; /* задайте ширину и высоту по вашему выбору */
+  height: 150px;
+  object-fit: cover; /* примените при необходимости */
+  border-radius: 50%; /* примените при необходимости */
 }
