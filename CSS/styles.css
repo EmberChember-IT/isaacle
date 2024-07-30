@@ -22,20 +22,20 @@ h1 {
 }
 
 h1:before {
-  content: attr(data-text);
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  transform: translate(-1px, -1px);
-  color: black;
+    content: attr(data-text);
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translate(-1px, -1px);
+    color: black;
 }
 
 /* Путь, если на сервере будет, надо поменять будет*/ 
 
 body {
-  background-image: url(https://i.imgur.com/7xgWNSh.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url(https://i.imgur.com/7xgWNSh.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 input{
@@ -50,12 +50,16 @@ input{
     background-repeat: no-repeat;
     background-size: cover;
 }
+input::placeholder{
+    font-family: Exo2;
+    color: bisque;
+}
 .character-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1px;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1px;
+    text-align: center;
 
 }
 
@@ -120,21 +124,42 @@ input[readonly] {
 }
 
 .container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image{
-  object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rules-table{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
 }
 
 tr {
-    font-size: 15px;
-	color: white;
+    font-family: Exo2;
+    background-color:bisque;
+    font-size: 24px;
+	color: black;
+}
+.rules-color{
+    width: auto;
+    height: 50px;
+}
+.green{
+    background-color: #80ff80;
+}
+.red{
+    background-color: #ff8080;
+}
+.yellow{
+    background-color: #ffff80;
 }
