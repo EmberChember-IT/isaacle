@@ -502,6 +502,9 @@ body {
     width: 80%;
     max-width: 500px;
     position: relative;
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
 }
 
 .close {
@@ -513,6 +516,17 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+.win-title {
+    color: var(--text-secondary);
+}
+.end-info {
+    color: var(--text-primary);
+}
+.character-info :first-child{
+    color: var(--text-secondary);
+    font-size: 20x;
+}
+
 
 /* Кнопка "Играть снова" */
 .play-again-container {

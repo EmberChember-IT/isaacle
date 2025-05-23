@@ -2,275 +2,275 @@
 export const characters = [
     {
         character: "Isaac",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка", "Бомба"]
+        START: ["Активка", "Бомба"]
     },
     {
         character: "Azazel",
-        sex: "Мужской",
-        life: "Неживой",
+        SEX: "Мужской",
+        LIFE: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Карта"]
+        START: ["Карта"]
     },
     {
         character: "Apollyon",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Afterbirth+",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Bethany",
-        sex: "Женский",
-        life: "Живой",
+        SEX: "Женский",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка", "Сердца"]
+        START: ["Активка", "Сердца"]
     },
     {
         character: "Jacob and Esau",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Ничего"]
+        START: ["Ничего"]
     },
     {
         character: "Eve",
-        sex: "Женский",
-        life: "Живой",
+        SEX: "Женский",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка", "Пассивный"]
+        START: ["Активка", "Пассивный"]
     },
     {
         character: "The Forgotten",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Afterbirth+",
-        start: ["Ничего"]
+        START: ["Ничего"]
     },
     {
         character: "Judas",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка", "Монеты"]
+        START: ["Активка", "Монеты"]
     },
     {
         character: "Cain",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Пассивный", "Ключ", "Брелок"]
+        START: ["Пассивный", "Ключ", "Брелок"]
     },
     {
         character: "Keeper",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Afterbirth",
-        start: ["Активка", "Бомба", "Монеты", "Брелок"]
+        START: ["Активка", "Бомба", "Монеты", "Брелок"]
     },
     {
         character: "Lazarus",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Пассивный", "Пилюля"]
+        START: ["Пассивный", "Пилюля"]
     },
     {
         character: "Lilith",
-        sex: "Женский",
-        life: "Неживой",
+        SEX: "Женский",
+        LIFE: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Afterbirth",
-        start: ["Активка", "Пассивный"]
+        START: ["Активка", "Пассивный"]
     },
     {
         character: "The Lost",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка", "Монеты"]
+        START: ["Активка", "Монеты"]
     },
     {
         character: "Magdalene",
-        sex: "Женский",
-        life: "Живой",
+        SEX: "Женский",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка", "Пилюля"]
+        START: ["Активка", "Пилюля"]
     },
     {
         character: "Samson",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Пассивный", "Брелок"]
+        START: ["Пассивный", "Брелок"]
     },
     {
         character: "???",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Tainted Azazel",
-        sex: "Мужской",
-        life: "Неживой",
+        SEX: "Мужской",
+        LIFE: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Карта"]
+        START: ["Карта"]
     },
     {
         character: "Tainted Isaac",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Бомба"]
+        START: ["Бомба"]
     },
     {
         character: "Tainted Apollyon",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Tainted Bethany",
-        sex: "Женский",
-        life: "Живой",
+        SEX: "Женский",
+        LIFE: "Живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка", "Сердца"]
+        START: ["Активка", "Сердца"]
     },
     {
         character: "Tainted Jacob",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Tainted Eve",
-        sex: "Женский",
-        life: "Живой",
+        SEX: "Женский",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Tainted Forgotten",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Ничего"]
+        START: ["Ничего"]
     },
     {
         character: "Tainted Judas",
-        sex: "Мужской",
-        life: "Неживой",
+        SEX: "Мужской",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка", "Монеты"]
+        START: ["Активка", "Монеты"]
     },
     {
         character: "Tainted Cain",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка", "Ключ"]
+        START: ["Активка", "Ключ"]
     },
     {
         character: "Tainted Keeper",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Бомба"]
+        START: ["Бомба"]
     },
     {
         character: "Tainted Lazarus",
-        sex: "Мужской",
-        life: ["Живой", "Неживой"],
+        SEX: "Мужской",
+        LIFE: ["Живой", "Неживой"],
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Tainted Lilith",
-        sex: "Женский",
-        life: "Неживой",
+        SEX: "Женский",
+        LIFE: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Ничего"]
+        START: ["Ничего"]
     },
     {
         character: "Tainted Lost",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Карта", "Монеты"]
+        START: ["Карта", "Монеты"]
     },
     {
         character: "Tainted Magdalene",
-        sex: "Женский",
-        life: "Живой",
+        SEX: "Женский",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка"]
+        START: ["Активка"]
     },
     {
         character: "Tainted Samson",
-        sex: "Мужской",
-        life: "Живой",
+        SEX: "Мужской",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Ничего"]
+        START: ["Ничего"]
     },
     {
         character: "Tainted ???",
-        sex: "Не определен",
-        life: "Неживой",
+        SEX: "Не определен",
+        LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка", "Бомба"]
+        START: ["Активка", "Бомба"]
     },
     {
         character: "Tainted Eden",
-        sex: "Не определен",
-        life: "Живой",
+        SEX: "Не определен",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
+        START: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
     },
     {
         character: "Eden",
-        sex: "Не определен",
-        life: "Живой",
+        SEX: "Не определен",
+        LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
+        START: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
     },
 
 ];
