@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,73 +12,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
     <link rel="shortcut icon" href="#">
 </head>
+
 <body>
-<h1> Угадай персонажа из игры <br />The binding of Isaac:Repentance</h1>
-<label for="ent"></label>
-<input type="text" id="ent" placeholder="Введите имя персонажа" list="characterList" onfocus="showCharacterList()">
-<datalist id="characterList">
-    <option value="Isaac">
-    <option value="Magdalene">
-    <option value="Cain">
-    <option value="Judas">
-    <option value="???">
-    <option value="Eve">
-    <option value="Samson">
-    <option value="Azazel">
-    <option value="Lazarus">
-    <option value="Eden">
-    <option value="The Lost">
-    <option value="Lilith">
-    <option value="Keeper">
-    <option value="Apollyon">
-    <option value="The Forgotten">
-    <option value="Bethany">
-    <option value="Jacob and Esau">
-    <option value="Tainted Isaac">
-    <option value="Tainted Magdalene">
-    <option value="Tainted Cain">
-    <option value="Tainted Judas">
-    <option value="Tainted ???">
-    <option value="Tainted Eve">
-    <option value="Tainted Samson">
-    <option value="Tainted Azazel">
-    <option value="Tainted Lazarus">
-    <option value="Tainted Eden">
-    <option value="Tainted Lost">
-    <option value="Tainted Lilith">
-    <option value="Tainted Keeper">
-    <option value="Tainted Apollyon">
-    <option value="Tainted Forgotten">
-    <option value="Tainted Bethany">
-    <option value="Tainted Jacob">
-</datalist>
+    <div class="main-content">
+        <!-- Весь основной контент игры -->
+        <h1>Угадай персонажа из игры <br>The Binding of Isaac: Repentance</h1>
 
-<div id="entry-info" class="character-info"></div>
-<div id="rndm-info" class="character-info"></div>
-<div id="entry-info-start" class="character-info"></div>
-<div id="all-entry-info"></div>
+        <button id="rules-btn" class="rules-button">Правила игры</button>
 
-<div class="container">
-<table class="rules-table">
-    <tr>
-        <td>Правильно</td>
-		<td>Неправильно</td>
-		<td>Частично верно</td>
-    </tr>
-    <tr>
-        <td class="rules-color green"></td>
-		<td class="rules-color red"></td>
-		<td class="rules-color yellow"></td>
-    </tr>
+        <!-- Модальное окно -->
+        <div id="rules-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="modal-title">ПРАВИЛА ИГРЫ</h2>
+                <p class="modal-subtitle">Цвет ячейки соответствует тому, насколько точно угадана характеристика.</p>
+                <div class="rules-grid">
+                    <div class="rule-card green">
+                        <div class="rule-icon">✓</div>
+                        <div class="rule-text">Полное совпадение характеристики</div>
+                    </div>
+                    <div class="rule-card yellow">
+                        <div class="rule-icon">~</div>
+                        <div class="rule-text">Частичное совпадение</div>
+                    </div>
+                    <div class="rule-card red">
+                        <div class="rule-icon">✗</div>
+                        <div class="rule-text">Несовпадение характеристики</div>
+                    </div>
+                </div>
 
-</table>
-</div>
+                <div class="characteristics-info">
+                    <h3>Описание характеристик:</h3>
+                    <table class="attributes-table">
+                        <thead>
+                            <tr>
+                                <th>Характеристика</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HP (здоровье)</td>
+                                <td>Возможность иметь контейнеры здоровья</td>
+                                <td>"Может иметь", "Не может иметь"</td>
+                            </tr>
+                            <tr>
+                                <td>DLC (дополнение)</td>
+                                <td>Дополнение, в котором появился персонаж</td>
+                                <td>"Rebirth", "Afterbirth+"</td>
+                            </tr>
+                            <tr>
+                                <td>START (старт)</td>
+                                <td>Стартовые предметы персонажа</td>
+                                <td>Активка, ключ, брелок и тд.</td>
+                            </tr>
+                            <tr>
+                                <td>LIFE (жизнь)</td>
+                                <td>Живой/неживой статус</td>
+                                <td>"Живой", "Неживой"</td>
+                            </tr>
+                            <tr>
+                                <td>SEX (пол)</td>
+                                <td>Пол персонажа</td>
+                                <td>"Мужской", "Женский"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-<script src="js/main.js"></script>
+        <div class="input-container">
+            <input type="text" id="ent" placeholder="Введите имя персонажа" list="characterList">
+        </div>
 
+        <div id="attempts-container"></div>
+    </div>
+
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="win-title">Поздравляем!</h2>
+            <div class="attempts-count">Попыток: 3</div>
+            <div class="character-info"></div>
+        </div>
+    </div>
+
+    <!-- Кнопка "Играть снова" (вне модального окна) -->
+    <div class="play-again-container">
+        <button id="play-again" class="play-again-btn">Играть снова</button>
+    </div>
+
+    <script src="js/main.js" type="module"></script>
 </body>
 
 </html>

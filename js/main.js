@@ -1,436 +1,344 @@
-// Создаем объекты для представления персонажей
+// main.js
+import { characters } from './characters.js';
 
-const characters = [
-    {
-        character: "Isaac",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active", "Bomb"]
-    },
-    {
-        character: "Azazel",
-        sex: "Мужской",
-        life: "Неживой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Card"]
-    },
-    {
-        character: "Apollyon",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Может иметь контейнеры",
-        DLC: "Afterbirth+",
-        start: ["Active"]
-    },
-    {
-        character: "Bethany",
-        sex: "Женский",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active", "Heart"]
-    },
-    {
-        character: "Jacob and Esau",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["None"]
-    },
-    {
-        character: "Eve",
-        sex: "Женский",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active", "Passive"]
-    },
-    {
-        character: "The Forgotten",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Afterbirth+",
-        start: ["None"]
-    },
-    {
-        character: "Judas",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active", "Coin"]
-    },
-    {
-        character: "Cain",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Passive", "Key", "Trinket"]
-    },
-    {
-        character: "Keeper",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Afterbirth",
-        start: ["Active", "Bomb", "Coin", "Trinket"]
-    },
-    {
-        character: "Lazarus",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Passive", "Pill"]
-    },
-    {
-        character: "Lilith",
-        sex: "Женский",
-        life: "Неживой",
-        HP: "Может иметь контейнеры",
-        DLC: "Afterbirth",
-        start: ["Active", "Passive"]
-    },
-    {
-        character: "The Lost",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active", "Coin"]
-    },
-    {
-        character: "Magdalene",
-        sex: "Женский",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active", "Pill"]
-    },
-    {
-        character: "Samson",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Passive", "Trinket"]
-    },
-    {
-        character: "???",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active"]
-    },
-    {
-        character: "Tainted Azazel",
-        sex: "Мужской",
-        life: "Неживой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Card"]
-    },
-    {
-        character: "Tainted Isaac",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Bomb"]
-    },
-    {
-        character: "Tainted Apollyon",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active"]
-    },
-    {
-        character: "Tainted Bethany",
-        sex: "Женский",
-        life: "Живой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active", "Heart"]
-    },
-    {
-        character: "Tainted Jacob",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active"]
-    },
-    {
-        character: "Tainted Eve",
-        sex: "Женский",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active"]
-    },
-    {
-        character: "Tainted Forgotten",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["None"]
-    },
-    {
-        character: "Tainted Judas",
-        sex: "Мужской",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active", "Coin"]
-    },
-    {
-        character: "Tainted Cain",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active", "Key"]
-    },
-    {
-        character: "Tainted Keeper",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Bomb"]
-    },
-    {
-        character: "Tainted Lazarus",
-        sex: "Мужской",
-        life: ["Живой", "Неживой"],
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active"]
-    },
-    {
-        character: "Tainted Lilith",
-        sex: "Женский",
-        life: "Неживой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["None"]
-    },
-    {
-        character: "Tainted Lost",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Card", "Coin"]
-    },
-    {
-        character: "Tainted Magdalene",
-        sex: "Женский",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active"]
-    },
-    {
-        character: "Tainted Samson",
-        sex: "Мужской",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["None"]
-    },
-    {
-        character: "Tainted ???",
-        sex: "Не определен",
-        life: "Неживой",
-        HP: "Не может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active", "Bomb"]
-    },
-    {
-        character: "Tainted Eden",
-        sex: "Не определен",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Repentance",
-        start: ["Active", "Passive", "Bomb", "Key", "Coin", "Trinket", "Pill", "Card"]
-    },
-    {
-        character: "Eden",
-        sex: "Не определен",
-        life: "Живой",
-        HP: "Может иметь контейнеры",
-        DLC: "Rebirth",
-        start: ["Active", "Passive", "Bomb", "Key", "Coin", "Trinket", "Pill", "Card"]
-    },
-
-];
-
- function showCharacterList() {
-    // Показать выпадающий список
-    const characterInput = document.getElementById('ent');
-    characterInput.setAttribute('list', 'characterList');
-}
-
-
-/*
-const characterInput = document.getElementById('ent');
-const characterList = document.getElementById('characterList');
-let listVisible = false; // Флаг для отслеживания видимости списка
-
-characterInput.addEventListener('input', function() {
-    // Показать выпадающий список при вводе текста
-    if (characterInput.value.trim() !== '' && !listVisible) {
-        characterList.setAttribute('style', 'display: block;');
-        listVisible = true;
-    } else if (characterInput.value.trim() === '' && listVisible) {
-        characterList.setAttribute('style', 'display: none;');
-        listVisible = false;
-    }
-});
-*/
-
-// Функция для сравнения двух объектов персонажей
-function areCharactersEqual(char1, char2) {
-    return Object.entries(char1).every(([key, value]) => char2[key] === value);
-}
-//Выбор рандомного персонажа
-let  char = ['Isaac', 'Magdalene', 'Cain', 'Judas', '???', 'Eve', 'Samson', 'Azazel', 'Lazarus', 'Eden', 'The Lost', 'Lilith', 'Keeper', 'Apollyon', 'The Forgotten', 'Bethany', 'Jacob and Esau', 'Tainted Isaac', 'Tainted Magdalene', 'Tainted Cain', 'Tainted Judas', 'Tainted ???', 'Tainted Eve', 'Tainted Samson', 'Tainted Azazel', 'Tainted Lazarus', 'Tainted Eden', 'Tainted Lost', 'Tainted Lilith', 'Tainted Keeper', 'Tainted Apollyon', 'Tainted Forgotten', 'Tainted Bethany', 'Tainted Jacob'];
-
-let rndm = char[Math.floor(Math.random() * char.length)];
-
-console.log(rndm)
-//Выбор рандомного персонажа
-
-let rndmCharacter = characters.find(character => character.character === rndm);
-
-if (rndmCharacter) {
-    // Переменная rndm теперь содержит параметры случайно выбранного персонажа
-    let rndm = { ...rndmCharacter };
-    console.log(`Параметры для ${rndm}:`, rndm);
-} else {
-    console.log(`Персонаж с именем ${rndm} не найден.`);
-}
-
-// Инициализация массива entryCharacters
-let entryCharacters = [];
-let entryCharacter;
-
-
-
-
-// Функция для определения класса цвета для каждого параметра
-function getColorClass(key, value, colorClass) {
-    // Проверяем, является ли параметр 'start'
-    if (key === 'start') {
-        // Преобразуем массив в строку
-        const startValueString = value.join(',');
-        const rndmStartValues = rndmCharacter.start.join(',');
-
-        // Разбиваем строку на массив и сравниваем каждый элемент
-        const startValues = startValueString.split(',');
-
-        // Если параметр полностью совпадает, возвращаем 'green'
-        if (startValues.join(',') === rndmStartValues) {
-            return 'green';
-        }
-
-        // Если хотя бы одно значение совпадает, возвращаем 'yellow'
-        if (startValues.some(startValue => rndmStartValues.includes(startValue))) {
-            return 'yellow';
-        }
-    }
-
-    // В остальных случаях, сравниваем параметр с rndmCharacter
-    return rndmCharacter[key] === value ? 'green' : 'red';
-}
-
-// Функция для вывода параметра "start" в интерфейс с цветовыми обозначениями
-function displayCharacterInfo(parentElement, characterData, colorClass) {
-    const element = document.createElement('div');
-    element.classList.add('character-info'); // добавляем класс для стилизации
-    parentElement.appendChild(element);
-
-    for (const [key, value] of Object.entries(characterData)) {
-        const paragraph = document.createElement('p');
-        paragraph.textContent = `${key}: ${value}`;
-
-        // Определение класса цвета для каждого параметра
-        const currentColorClass = getColorClass(key, value, colorClass);
-        paragraph.classList.add(currentColorClass);
-
-        element.appendChild(paragraph);
-    }
-
-    parentElement.insertBefore(element, parentElement.firstChild);
-
-    // Флаг, отслеживающий, был ли параметр "start" уже выведен
-    let startDisplayed = false;
-
-// Отображение параметра "start" в соответствующем контейнере
-    if ('start' in entryCharacter && !startDisplayed) {
-        const startElement = document.getElementById('entry-info-start');
-        if (startElement) {
-            const paragraph = document.createElement('p');
-            paragraph.textContent = `start: ${entryCharacter['start'].join(', ')}`;
-            const currentColorClass = getColorClass('start', entryCharacter['start'], colorClass);
-            paragraph.classList.add(currentColorClass);
-
-            // Добавляем элемент в начало контейнера
-            startElement.insertBefore(paragraph, startElement.firstChild);
-
-            // Устанавливаем флаг в true после первого вывода
-            startDisplayed = true;
-        }
-    }
-}
-// Сравнение переменных и вывод параметров в интерфейс
-function compareValues() {
-
-    let entry = document.getElementById('ent').value.toLowerCase();
-
-    let entryCharacterData = characters.find(character => character.character.toLowerCase() === entry);
-
-    if (entryCharacterData) {
-        entryCharacter = { ...entryCharacterData };
-        entryCharacters.push(entryCharacter); // Сохраняем введенного персонажа и его параметры
-
-        // Отображаем параметры в интерфейсе
-        const allEntryInfoElement = document.getElementById('all-entry-info');
-        displayCharacterInfo(allEntryInfoElement, entryCharacter, 'yellow');
-    } else {
-        console.log(`Персонаж с именем ${entry} не найден.`);
-    }
-
-    if (rndmCharacter && entryCharacter) {
-        console.log("Продолжайте гадать");
-
-        // Очищаем вывод для entry-info-start
-        const startElement = document.getElementById('entry-info-start');
-        if (startElement) {
-            startElement.innerHTML = '';
-
-        }
-    }
-}
-
-
-
-// Вызываем функцию compareValues() после того, как пользователь введет значение
-document.getElementById('ent').addEventListener('keyup', event => {
-    if (event.keyCode === 13) { // Проверяем, что нажата клавиша Enter
-        compareValues();
-        document.getElementById('ent').value = "";
+// Управление модальными окнами
+document.addEventListener('DOMContentLoaded', () => {
+    // Правила игры
+    const rulesModal = document.getElementById('rules-modal');
+    const rulesBtn = document.getElementById('rules-btn');
+    const rulesClose = document.querySelector('#rules-modal .close');
+    
+    rulesBtn.onclick = () => rulesModal.style.display = "block";
+    rulesClose.onclick = () => rulesModal.style.display = "none";
+    
+    // Окно победы
+    const playAgainBtn = document.getElementById('play-again');
+    if (playAgainBtn) {
+        playAgainBtn.onclick = () => {
+            location.reload(); // Полная перезагрузка страницы
+        };
     }
 });
 
+class IsaacleGame {
+    constructor() {
+        this.availableCharacters = [...characters];
+        this.secretCharacter = this.getRandomCharacter();
+        this.attempts = [];
+        this.guessedCharacters = new Set();
+        this.gameOver = false; // Флаг окончания игры
+        console.log('Загадан персонаж:', this.secretCharacter.character);
+        this.initGame();
+        this.initWinElements(); // Инициализируем элементы победы
+    }
+
+    getRandomCharacter() {
+        const randomIndex = Math.floor(Math.random() * this.availableCharacters.length);
+        return { ...this.availableCharacters[randomIndex] };
+    }
+
+    initGame() {
+        this.initDatalist();
+        this.initEventListeners();
+    }
+
+    initDatalist() {
+        const datalist = document.getElementById('characterList') || this.createDatalist();
+        this.updateDatalist();
+    }
+
+    initWinElements() {
+        // Создаем элементы, если их нет
+        if (!document.getElementById('win-modal')) {
+            const winModal = document.createElement('div');
+            winModal.id = 'win-modal';
+            winModal.className = 'modal';
+            winModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="win-title">Поздравляем!</h2>
+                    <div class="attempts-count"></div>
+                    <div class="character-info"></div>
+                </div>
+            `;
+            document.body.appendChild(winModal);
+        }
+
+        if (!document.querySelector('.play-again-container')) {
+            const playAgainContainer = document.createElement('div');
+            playAgainContainer.className = 'play-again-container';
+            playAgainContainer.innerHTML = `
+                <button id="play-again" class="play-again-btn">Играть снова</button>
+            `;
+            document.body.appendChild(playAgainContainer);
+        }
+
+        // Назначаем обработчики
+        document.querySelector('#win-modal .close').onclick = () => this.closeWinModal();
+        document.getElementById('play-again').onclick = () => location.reload();
+        window.onclick = (event) => {
+            if (event.target === document.getElementById('win-modal')) {
+                this.closeWinModal();
+            }
+        };
+    }
+
+    closeWinModal() {
+        const modal = document.getElementById('win-modal');
+        if (modal) modal.style.display = 'none';
+    }
+
+    endGame(isWin) {
+        this.gameOver = true;
+        const input = document.getElementById('ent');
+        if (input) {
+            input.disabled = true;
+            input.placeholder = isWin ? "Вы победили!" : "Игра окончена";
+        }
+
+        if (isWin) {
+            this.showWinModal();
+            const playAgainContainer = document.querySelector('.play-again-container');
+            if (playAgainContainer) playAgainContainer.style.display = 'block';
+        }
+    }
+
+    showWinModal() {
+        const modal = document.getElementById('win-modal');
+        if (!modal) return;
+
+        const title = modal.querySelector('.win-title');
+        const attempts = modal.querySelector('.attempts-count');
+        const characterInfo = modal.querySelector('.character-info');
+
+        if (title) title.textContent = "Поздравляем!";
+        if (attempts) attempts.textContent = `Попыток: ${this.attempts.length}`;
+        
+        if (characterInfo) {
+            characterInfo.innerHTML = `
+                <h3>${this.secretCharacter.character}</h3>
+                ${Object.entries(this.secretCharacter)
+                    .filter(([key]) => key !== 'character')
+                    .map(([key, value]) => `
+                    <p><strong>${key}:</strong> ${
+                        Array.isArray(value) ? value.join(', ') : value
+                    }</p>
+                    `).join('')}
+            `;
+        }
+        
+        modal.style.display = "block";
+    }
+
+    createDatalist() {
+        const datalist = document.createElement('datalist');
+        datalist.id = 'characterList';
+        document.body.appendChild(datalist);
+        document.getElementById('ent').setAttribute('list', 'characterList');
+        return datalist;
+    }
+
+    updateDatalist() {
+        const datalist = document.getElementById('characterList');
+        if (datalist) {
+            datalist.innerHTML = this.availableCharacters.map(
+                c => `<option value="${c.character}">`
+            ).join('');
+        }
+    }
+
+    removeCharacterFromAvailable(name) {
+        this.availableCharacters = this.availableCharacters.filter(
+            char => char.character.toLowerCase() !== name.toLowerCase()
+        );
+        this.updateDatalist();
+    }
+
+    showMessage(text, type) {
+        const message = document.createElement('div');
+        message.className = `message ${type}`;
+        message.textContent = text;
+        document.body.appendChild(message);
+        
+        setTimeout(() => {
+            message.classList.add('fade-out');
+            setTimeout(() => message.remove(), 500);
+        }, 2000);
+    }
+
+    getColorClass(key, value) {
+        if (key === 'start') {
+            const secretStart = this.secretCharacter.start;
+            const isExactMatch = JSON.stringify(value) === JSON.stringify(secretStart);
+            const hasPartialMatch = value.some(item => secretStart.includes(item));
+            return isExactMatch ? 'green' : hasPartialMatch ? 'yellow' : 'red';
+        }
+        return this.secretCharacter[key] === value ? 'green' : 'red';
+    }
+
+    createCharacterRow(character) {
+        const row = document.createElement('div');
+        row.className = 'character-row';
+        
+        const nameCell = document.createElement('div');
+        nameCell.className = 'character-name';
+        nameCell.textContent = character.character;
+        row.appendChild(nameCell);
+
+        for (const [key, value] of Object.entries(character)) {
+            if (key === 'character') continue;
+            
+            const cell = document.createElement('div');
+            cell.className = `character-cell ${this.getColorClass(key, value)}`;
+            cell.innerHTML = `
+                <div class="property-name">${key}</div>
+                <div class="property-value">${
+                    Array.isArray(value) ? value.join(', ') : value
+                }</div>
+            `;
+            row.appendChild(cell);
+        }
+        
+        return row;
+    }
+
+    handleGuess(input) {
+        const normalizedInput = input.toLowerCase();
+        
+        // Проверка на повторный ввод
+        if (this.guessedCharacters.has(normalizedInput)) {
+            this.showMessage('Этот персонаж уже был!', 'error');
+            return null;
+        }
+
+        // Поиск персонажа
+        const character = this.availableCharacters.find(
+            c => c.character.toLowerCase() === normalizedInput
+        );
+
+        if (!character) {
+            this.showMessage('Персонаж не найден!', 'error');
+            return null;
+        }
+
+        // Добавляем в угаданные
+        this.guessedCharacters.add(normalizedInput);
+        this.removeCharacterFromAvailable(character.character);
+        return character;
+    }
+
+    addAttempt(character) {
+        this.attempts.push(character);
+        const container = document.getElementById('attempts-container');
+        container.prepend(this.createCharacterRow(character));
+        
+        if (character.character === this.secretCharacter.character) {
+            setTimeout(() => this.showMessage('Поздравляем! Вы угадали персонажа!', 'success'), 300);
+        }
+    }
+
+    addAttempt(character) {
+        if (this.gameOver) return;
+        
+        this.attempts.push(character);
+        this.guessedCharacters.add(character.character.toLowerCase());
+        this.removeCharacterFromAvailable(character.character);
+        
+        const container = document.getElementById('attempts-container');
+        container.prepend(this.createCharacterRow(character));
+        
+        // Проверка победы
+        if (character.character === this.secretCharacter.character) {
+            this.endGame(true);
+        }
+    }
+
+    endGame(isWin) {
+        this.gameOver = true;
+        const input = document.getElementById('ent');
+        input.disabled = true;
+        input.placeholder = isWin ? "Вы победили!" : "Игра окончена";
+        
+        if (isWin) {
+            // Показываем модальное окно только для победы
+            this.showWinModal();
+            
+            // Показываем кнопку "Играть снова" под попытками
+            document.querySelector('.play-again-container').style.display = 'block';
+        }
+    }
+
+    showWinModal() {
+        const modal = document.getElementById('win-modal');
+        const title = modal.querySelector('.win-title');
+        const attempts = modal.querySelector('.attempts-count');
+        const characterInfo = modal.querySelector('.character-info');
+        
+        title.textContent = "Поздравляем!";
+        attempts.textContent = `Попыток: ${this.attempts.length}`;
+        
+        characterInfo.innerHTML = `
+            <h3>${this.secretCharacter.character}</h3>
+            ${Object.entries(this.secretCharacter)
+                .filter(([key]) => key !== 'character')
+                .map(([key, value]) => `
+                <p><strong>${key}:</strong> ${
+                    Array.isArray(value) ? value.join(', ') : value
+                }</p>
+                `).join('')}
+        `;
+        
+        modal.style.display = "block";
+    }
+
+    initEventListeners() {
+        const inputField = document.getElementById('ent');
+        
+        inputField.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                const input = e.target.value.trim();
+                if (input) {
+                    const character = this.handleGuess(input);
+                    if (character) {
+                        this.addAttempt(character);
+                        e.target.value = '';
+                    }
+                }
+            }
+        });
+
+        // Обновление datalist при вводе
+        inputField.addEventListener('input', () => {
+            const input = inputField.value.toLowerCase();
+            const datalist = document.getElementById('characterList');
+            
+            if (datalist) {
+                datalist.innerHTML = this.availableCharacters
+                    .filter(c => c.character.toLowerCase().includes(input))
+                    .map(c => `<option value="${c.character}">`)
+                    .join('');
+            }
+        });
+                // Закрытие модального окна
+        document.querySelector('#win-modal .close').onclick = () => {
+            document.getElementById('win-modal').style.display = "none";
+        };
+
+        // Закрытие по клику вне окна
+        window.onclick = (event) => {
+            if (event.target === document.getElementById('win-modal')) {
+                document.getElementById('win-modal').style.display = "none";
+            }
+        };
+
+        // Кнопка "Играть снова"
+        document.getElementById('play-again').onclick = () => {
+            location.reload();
+        };
+    }
+}
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    window.game = new IsaacleGame();
+});

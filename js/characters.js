@@ -1,14 +1,12 @@
 
-// Создаем объекты для представления персонажей
-
-const characters = [
+export const characters = [
     {
         character: "Isaac",
         sex: "Мужской",
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active", "Bomb"]
+        start: ["Активка", "Бомба"]
     },
     {
         character: "Azazel",
@@ -16,15 +14,15 @@ const characters = [
         life: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Card"]
+        start: ["Карта"]
     },
     {
         character: "Apollyon",
         sex: "Не определен",
         life: "Неживой",
         HP: "Может иметь контейнеры",
-        DLC: "Да",
-        start: ["Active"]
+        DLC: "Afterbirth+",
+        start: ["Активка"]
     },
     {
         character: "Bethany",
@@ -32,7 +30,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active", "Heart"]
+        start: ["Активка", "Сердца"]
     },
     {
         character: "Jacob and Esau",
@@ -40,7 +38,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: [" "]
+        start: ["Ничего"]
     },
     {
         character: "Eve",
@@ -48,7 +46,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active", "Passive"]
+        start: ["Активка", "Пассивный"]
     },
     {
         character: "The Forgotten",
@@ -56,7 +54,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Afterbirth+",
-        start: [" "]
+        start: ["Ничего"]
     },
     {
         character: "Judas",
@@ -64,7 +62,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active", "Coin"]
+        start: ["Активка", "Монеты"]
     },
     {
         character: "Cain",
@@ -72,7 +70,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Passive", "Key", "Trinket"]
+        start: ["Пассивный", "Ключ", "Брелок"]
     },
     {
         character: "Keeper",
@@ -80,7 +78,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Afterbirth",
-        start: ["Active", "Bomb", "Coin", "Trinket"]
+        start: ["Активка", "Бомба", "Монеты", "Брелок"]
     },
     {
         character: "Lazarus",
@@ -88,7 +86,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Passive", "Pill"]
+        start: ["Пассивный", "Пилюля"]
     },
     {
         character: "Lilith",
@@ -96,7 +94,7 @@ const characters = [
         life: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Afterbirth",
-        start: ["Active", "Passive"]
+        start: ["Активка", "Пассивный"]
     },
     {
         character: "The Lost",
@@ -104,7 +102,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active", "Coin"]
+        start: ["Активка", "Монеты"]
     },
     {
         character: "Magdalene",
@@ -112,7 +110,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active", "Pill"]
+        start: ["Активка", "Пилюля"]
     },
     {
         character: "Samson",
@@ -120,7 +118,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Passive", "Trinket"]
+        start: ["Пассивный", "Брелок"]
     },
     {
         character: "???",
@@ -128,7 +126,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active"]
+        start: ["Активка"]
     },
     {
         character: "Tainted Azazel",
@@ -136,7 +134,7 @@ const characters = [
         life: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Card"]
+        start: ["Карта"]
     },
     {
         character: "Tainted Isaac",
@@ -144,7 +142,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Bomb"]
+        start: ["Бомба"]
     },
     {
         character: "Tainted Apollyon",
@@ -152,7 +150,7 @@ const characters = [
         life: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active"]
+        start: ["Активка"]
     },
     {
         character: "Tainted Bethany",
@@ -160,7 +158,7 @@ const characters = [
         life: "Живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active", "Heart"]
+        start: ["Активка", "Сердца"]
     },
     {
         character: "Tainted Jacob",
@@ -168,7 +166,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active"]
+        start: ["Активка"]
     },
     {
         character: "Tainted Eve",
@@ -176,7 +174,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active"]
+        start: ["Активка"]
     },
     {
         character: "Tainted Forgotten",
@@ -184,7 +182,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: [" "]
+        start: ["Ничего"]
     },
     {
         character: "Tainted Judas",
@@ -192,7 +190,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active", "Coin"]
+        start: ["Активка", "Монеты"]
     },
     {
         character: "Tainted Cain",
@@ -200,7 +198,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active", "Key"]
+        start: ["Активка", "Ключ"]
     },
     {
         character: "Tainted Keeper",
@@ -208,7 +206,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Bomb"]
+        start: ["Бомба"]
     },
     {
         character: "Tainted Lazarus",
@@ -216,7 +214,7 @@ const characters = [
         life: ["Живой", "Неживой"],
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active"]
+        start: ["Активка"]
     },
     {
         character: "Tainted Lilith",
@@ -224,7 +222,7 @@ const characters = [
         life: "Неживой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: [" "]
+        start: ["Ничего"]
     },
     {
         character: "Tainted Lost",
@@ -232,7 +230,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Card", "Coin"]
+        start: ["Карта", "Монеты"]
     },
     {
         character: "Tainted Magdalene",
@@ -240,7 +238,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active"]
+        start: ["Активка"]
     },
     {
         character: "Tainted Samson",
@@ -248,7 +246,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: [" "]
+        start: ["Ничего"]
     },
     {
         character: "Tainted ???",
@@ -256,7 +254,7 @@ const characters = [
         life: "Неживой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active", "Bomb"]
+        start: ["Активка", "Бомба"]
     },
     {
         character: "Tainted Eden",
@@ -264,7 +262,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        start: ["Active", "Passive", "Bomb", "Key", "Coin", "Trinket", "Pill", "Card"]
+        start: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
     },
     {
         character: "Eden",
@@ -272,13 +270,7 @@ const characters = [
         life: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        start: ["Active", "Passive", "Bomb", "Key", "Coin", "Trinket", "Pill", "Card"]
+        start: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
     },
 
 ];
-
-//export default characters;
-
-// Пример доступа к атрибутам первого персонажа
-//console.log(characters[0].character); // Выведет "Персонаж 1"
-

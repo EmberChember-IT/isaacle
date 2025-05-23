@@ -1,22 +1,25 @@
- /*html,body {
-    background: url(assets/background.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}*/
+/* Основные цвета */
+:root {
+    --text-primary: #f0e6d2;
+    /* Светло-бежевый (как в LoL) */
+    --text-secondary: #c8aa6e;
+    /* Золотистый */
+    --divider-color: #5b5a56;
+    /* Цвет разделителя */
+    --bg-dark: #1e2328;
+    /* Тёмно-коричневый фон */
+}
 
 
 
 h1 {
     font-family: "Rubik Scribble";
     display: flex;
-	justify-content: center; 
+    justify-content: center;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 16em
-	font-size: 40px;
+    width: 16em font-size: 40px;
     color: white;
     text-shadow: 0 0 4px white;
 }
@@ -30,136 +33,533 @@ h1:before {
     color: black;
 }
 
-/* Путь, если на сервере будет, надо поменять будет*/ 
+/* Путь, если на сервере будет, надо поменять будет*/
 
 body {
-    background-image: url(https://i.imgur.com/7xgWNSh.png);
+    background-image: url(/assets/background.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-input{
+.main-content {
+    flex: 1;
     display: flex;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 15em;
-    font-size: 30px;
-	color: white;
-    background-image: url(https://i.imgur.com/7xgWNSh.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-input::placeholder{
-    font-family: Exo2;
-    color: bisque;
-}
-.character-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1px;
-    text-align: center;
-
+    flex-direction: column;
+    padding-bottom: 180px;
+    /* Место для блока правил */
 }
 
-.character-info p {
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-	margin-top: 10px;
-    border: 1px solid #ccc;
-    width: 8em;
-    height: 5em;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-	text-align: center;
+/*  ############################ ЧАСТЬ С ВВОДОМ  ############################ */
+
+.input-container {
+    position: relative;
+    margin: 30px auto;
+    max-width: 600px;
+    padding: 0 20px;
 }
 
-.bottom-info {
-	padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-	margin-top: 10px;
-    border: 1px solid #ccc;
-    width: 8em;
-    height: 5em;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-	text-align: center;
-}
-
-.character-info p.red {
-    background-color: #ff8080; /* красный цвет для несовпадающих параметров */
-}
-
-.character-info p.green {
-    background-color: #80ff80; /* зеленый цвет для полного совпадения параметров */
-}
-
-.character-info p.yellow {
-    background-color: #ffff80; /* желтый цвет для частичного совпадения параметров */
-}
-
-/* Скрыть треугольник выпадающего списка */
-input::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-/* Установить поле ввода в режим "только для чтения" */
-input[readonly] {
-    background-color: white;
-    cursor: default;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: none;
-    overflow: hidden;
-    position: absolute;
-}
-
-.container {
+#ent {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
-    height: 100vh;
+    max-width: 500px;
+    font-size: 28px;
+    padding: 15px 25px;
+    color: var(--text-primary);
+    background: rgba(40, 45, 50, 0.7);
+    border: 2px solid var(--text-secondary);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#ent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+#ent:focus {
+    border-color: #c8aa6e;
+    box-shadow: 0 0 0 3px rgba(200, 170, 110, 0.3);
+}
+
+#ent::placeholder {
+    color: rgba(200, 170, 110, 0.6);
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* ############################ ЧАСТЬ С ПОПЫТКАМИ ############################ */
+
+#attempts-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: var(--bg-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Строка попытки */
+.character-row {
     display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(30, 35, 40, 0.7);
+    border-radius: 6px;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Ячейка с именем персонажа */
+.character-name {
+    min-width: 160px;
+    width: 160px;
+    font-weight: bold;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    position: relative;
 }
 
-.image{
-    object-fit: cover;
+/* Ячейка характеристики */
+.character-cell {
+    min-width: 150px;
+    width: 150px;
+    padding: 15px 10px;
+    border-radius: 4px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    background: rgba(40, 45, 50, 0.5);
 }
 
-.rules-table{
+/* Название характеристики с разделителем */
+.property-name {
+    font-size: 22px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding-bottom: 6px;
+    width: 100%;
+    border-bottom: 1px solid var(--divider-color);
+    position: relative;
+}
+
+/* Декоративный элемент разделителя */
+.property-name:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 25%;
+    right: 25%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
+}
+
+/* Значение характеристики */
+.property-value {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: var(--text-primary);
+    margin-top: 6px;
+    padding: 0 5px;
+}
+
+/* Цветовые статусы */
+.character-cell.green {
+    background: rgba(46, 125, 50, 0.3);
+    border-left: 3px solid #4caf50;
+}
+
+.character-cell.yellow {
+    background: rgba(234, 179, 8, 0.2);
+    border-left: 3px solid #ffeb3b;
+}
+
+.character-cell.red {
+    background: rgba(211, 47, 47, 0.2);
+    border-left: 3px solid #f44336;
+}
+
+/* Эффекты при наведении */
+.character-cell:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Сообщения */
+.message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.message.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.message.fade-out {
+    opacity: 0;
+}
+
+/* Поле ввода */
+#ent:invalid {
+    border-color: #f44336;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+/* ############################ АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ############################ */
+@media (max-width: 768px) {
+    #ent {
+        font-size: 22px;
+        padding: 12px 20px 12px 40px;
+    }
+
+    .input-container::before {
+        left: 30px;
+    }
+
+    .character-name,
+    .character-cell {
+        min-width: 120px;
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .rules-table {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* ================= КНОПКА ПРАВИЛ ================= */
+.rules-button {
+    display: block;
+    margin: 10px auto 30px;
+    padding: 10px 25px;
+    background: rgba(200, 170, 110, 0.15);
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rules-button:hover {
+    background: rgba(200, 170, 110, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ================= МОДАЛЬНОЕ ОКНО ================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--bg-dark);
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 8px;
+    width: 85%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 0 25px rgba(200, 170, 110, 0.2);
+}
+
+.modal-title {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.modal-subtitle {
+    color: var(--text-primary);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-indent: 25px;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--text-secondary);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: var(--text-primary);
+}
+
+/* ================= СЕТКА ПРАВИЛ ================= */
+.rules-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.rule-card {
     display: flex;
-    justify-content: center;
-    border: 2px solid black;
+    align-items: center;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid;
 }
 
-tr {
-    font-family: Exo2;
-    background-color:bisque;
+.rule-icon {
     font-size: 24px;
-	color: black;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
 }
-.rules-color{
-    width: auto;
-    height: 50px;
+
+.rule-text {
+    font-size: 15px;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
 }
-.green{
-    background-color: #80ff80;
+
+/* Цветовые стили */
+.green {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
 }
-.red{
-    background-color: #ff8080;
+
+.yellow {
+    border-color: #ffeb3b;
+    background: rgba(255, 235, 59, 0.1);
 }
-.yellow{
-    background-color: #ffff80;
+
+.red {
+    border-color: #f44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+/* ================= ОПИСАНИЕ ХАРАКТЕРИСТИК ================= */
+.characteristics-info {
+    border-top: 1px solid var(--divider-color);
+    padding-top: 20px;
+}
+
+.characteristics-info h3 {
+    color: var(--text-secondary);
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Таблица характеристик */
+.attributes-title {
+    margin-top: 40px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--divider-color);
+    padding-bottom: 10px;
+}
+
+.attributes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.attributes-table th {
+    background-color: rgba(200, 170, 110, 0.1);
+    color: var(--text-secondary);
+    padding: 12px;
+    text-align: left;
+    text-align: center;
+
+}
+
+.attributes-table td {
+    color: var(--text-primary);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-bottom: 1px solid var(--divider-color);
+    justify-content: center;
+}
+
+.attributes-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.attributes-table tr:hover {
+    background-color: rgba(200, 170, 110, 0.05);
+}
+
+/* Анимация */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.4s ease-out;
+}
+
+/* ================= ОКОНЧАНИЕ ИГРЫ ================= */
+/* Модальное окно победы */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: var(--bg-dark);
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--text-secondary);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Кнопка "Играть снова" */
+.play-again-container {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px 0;
+}
+
+.play-again-btn {
+    background-color: var(--text-secondary);
+    color: var(--bg-dark);
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.play-again-btn:hover {
+    background-color: #e0c060;
+    transform: translateY(-2px);
+}
+
+#play-again-container {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px 0;
+}
+
+.play-again-btn {
+    background-color: #c8aa6e;
+    color: #1e2328;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.play-again-btn:hover {
+    background-color: #e0c060;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 170, 110, 0.3);
 }
