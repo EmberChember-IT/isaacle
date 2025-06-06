@@ -1,7 +1,7 @@
 /* Основные цвета */
 :root {
     --text-primary: #f0e6d2;
-    /* Светло-бежевый (как в LoL) */
+    /* Светло-бежевый */
     --text-secondary: #c8aa6e;
     /* Золотистый */
     --divider-color: #5b5a56;
@@ -19,8 +19,9 @@ h1 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 16em font-size: 40px;
-    color: white;
+    width: 16em; 
+    font-size: 36px;
+    color: var(--text-primary);
     text-shadow: 0 0 4px white;
 }
 
@@ -89,6 +90,40 @@ body {
     color: rgba(200, 170, 110, 0.6);
     letter-spacing: 1px;
     font-weight: 300;
+}
+
+/* Кастомный dropdown */
+.datalist-dropdown {
+    position: fixed;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(40, 45, 50, 0.95);
+    border: 1px solid var(--text-secondary);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    margin-top: 5px;
+}
+
+.datalist-option {
+    padding: 12px 20px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px;
+}
+
+.datalist-option:hover {
+    background: rgba(200, 170, 110, 0.2);
+    color: var(--text-secondary);
+}
+
+.datalist-option mark {
+    background: rgba(200, 170, 110, 0.4);
+    color: inherit;
+    padding: 0;
 }
 
 /* ############################ ЧАСТЬ С ПОПЫТКАМИ ############################ */
@@ -178,18 +213,18 @@ body {
 
 /* Цветовые статусы */
 .character-cell.green {
-    background: rgba(46, 125, 50, 0.3);
-    border-left: 3px solid #4caf50;
+    background: rgba(46, 125, 50, 0.3) !important;
+    border-left: 3px solid #4caf50 !important;
 }
 
 .character-cell.yellow {
-    background: rgba(234, 179, 8, 0.2);
-    border-left: 3px solid #ffeb3b;
+    background: rgba(234, 179, 8, 0.2) !important;
+    border-left: 3px solid #ffeb3b !important;
 }
 
 .character-cell.red {
-    background: rgba(211, 47, 47, 0.2);
-    border-left: 3px solid #f44336;
+    background: rgba(211, 47, 47, 0.2) !important;
+    border-left: 3px solid #f44336 !important;
 }
 
 /* Эффекты при наведении */
@@ -253,327 +288,482 @@ body {
     }
 }
 
-/* ############################ АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ############################ */
-@media (max-width: 768px) {
-    #ent {
-        font-size: 22px;
-        padding: 12px 20px 12px 40px;
-    }
-
-    .input-container::before {
-        left: 30px;
-    }
-
-    .character-name,
-    .character-cell {
-        min-width: 120px;
-        width: 120px;
-        font-size: 14px;
-    }
-
-    .rules-table {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-
-/* ================= КНОПКА ПРАВИЛ ================= */
-.rules-button {
-    display: block;
-    margin: 10px auto 30px;
-    padding: 10px 25px;
-    background: rgba(200, 170, 110, 0.15);
-    color: var(--text-secondary);
-    border: 1px solid var(--text-secondary);
-    border-radius: 25px;
-    font-size: 16px;
-    font-family: 'Exo 2', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.rules-button:hover {
-    background: rgba(200, 170, 110, 0.3);
-    transform: translateY(-2px);
-}
-
-/* ================= МОДАЛЬНОЕ ОКНО ================= */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-}
-
-.modal-content {
-    position: relative;
-    background-color: var(--bg-dark);
-    margin: 5% auto;
-    padding: 30px;
-    border: 1px solid var(--text-secondary);
-    border-radius: 8px;
-    width: 85%;
-    max-width: 600px;
-    max-height: 85vh;
-    overflow-y: auto;
-    box-shadow: 0 0 25px rgba(200, 170, 110, 0.2);
-}
-
-.modal-title {
-    color: var(--text-secondary);
-    text-align: center;
-    font-size: 22px;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-.modal-subtitle {
-    color: var(--text-primary);
-    font-family: 'Exo 2', sans-serif;
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    text-indent: 25px;
-    font-weight: bold;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: var(--text-secondary);
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.close:hover {
-    color: var(--text-primary);
-}
-
-/* ================= СЕТКА ПРАВИЛ ================= */
-.rules-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.rule-card {
+/* Стили для иконок персонажей */
+.character-icon {
+    min-width: 120px;  /* Фиксированная ширина как у других ячеек */
+    height: 120px;      /* Занимает всю высоту строки */
     display: flex;
-    align-items: center;
-    padding: 15px;
-    border-radius: 6px;
-    border-left: 4px solid;
-}
-
-.rule-icon {
-    font-size: 24px;
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.rule-text {
-    font-size: 15px;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-}
-
-/* Цветовые стили */
-.green {
-    border-color: #4caf50;
-    background: rgba(76, 175, 80, 0.1);
-}
-
-.yellow {
-    border-color: #ffeb3b;
-    background: rgba(255, 235, 59, 0.1);
-}
-
-.red {
-    border-color: #f44336;
-    background: rgba(244, 67, 54, 0.1);
-}
-
-/* ================= ОПИСАНИЕ ХАРАКТЕРИСТИК ================= */
-.characteristics-info {
-    border-top: 1px solid var(--divider-color);
-    padding-top: 20px;
-}
-
-.characteristics-info h3 {
-    color: var(--text-secondary);
-    font-size: 18px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-/* Таблица характеристик */
-.attributes-title {
-    margin-top: 40px;
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--divider-color);
-    padding-bottom: 10px;
-}
-
-.attributes-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.attributes-table th {
-    background-color: rgba(200, 170, 110, 0.1);
-    color: var(--text-secondary);
-    padding: 12px;
-    text-align: left;
-    text-align: center;
-
-}
-
-.attributes-table td {
-    color: var(--text-primary);
-    font-family: 'Exo 2', sans-serif;
-    font-size: 16px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    padding: 12px;
-    border-bottom: 1px solid var(--divider-color);
+    align-items: stretch; /* Растягиваем содержимое */
+    background: rgba(40, 45, 50, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
     justify-content: center;
 }
 
-.attributes-table tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-.attributes-table tr:hover {
-    background-color: rgba(200, 170, 110, 0.05);
-}
-
-/* Анимация */
-@keyframes modalFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.modal-content {
-    animation: modalFadeIn 0.4s ease-out;
-}
-
-/* ================= ОКОНЧАНИЕ ИГРЫ ================= */
-/* Модальное окно победы */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
+.character-icon img {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    object-fit: cover; /* Заполняем весь контейнер */
+    object-position: center;
+    transition: transform 0.3s;
 }
 
-.modal-content {
-    background-color: var(--bg-dark);
-    margin: 10% auto;
-    padding: 30px;
-    border: 1px solid var(--text-secondary);
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
+/* Эффект при наведении */
+.character-icon:hover img {
+    transform: scale(1.05);
+}
+
+.character-name-fallback {
+    font-size: 14px;
     text-align: center;
-    font-family: 'Exo 2', sans-serif;
-    font-size: 20px;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: var(--text-secondary);
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.win-title {
-    color: var(--text-secondary);
-}
-.end-info {
     color: var(--text-primary);
-}
-.character-info :first-child{
-    color: var(--text-secondary);
-    font-size: 20x;
+    padding: 5px;
+    word-break: break-word;
 }
 
+/* ############################ МОДАЛЬНЫЕ ОКНА ############################ */
+
+/* Общие стили для всех модальных окон */
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+overflow-y: auto;
+}
+
+/* Контент модального окна */
+.modal-content {
+background: linear-gradient(to bottom, #2a2e34, #1e2328);
+margin: 5% auto;
+padding: 30px;
+border: 1px solid var(--text-secondary);
+border-radius: 10px;
+width: 80%;
+max-width: 800px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+position: relative;
+animation: modalFadeIn 0.3s;
+}
+
+/* Анимация появления */
+@keyframes modalFadeIn {
+from {
+opacity: 0;
+transform: translateY(-50px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+/* Кнопка закрытия */
+.close {
+color: var(--text-secondary);
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.close:hover {
+color: var(--text-primary);
+transform: rotate(90deg);
+}
+
+/* Заголовки модальных окон */
+.modal-title {
+color: var(--text-primary);
+text-align: center;
+font-size: 28px;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.modal-subtitle {
+color: var(--text-secondary);
+text-align: center;
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.win-title {
+color: var(--text-primary);
+text-align: center;
+font-size: 32px;
+margin-bottom: 20px;
+text-transform: uppercase;
+color: var(--text-secondary);
+}
+
+/* Сетка с правилами */
+.rules-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin: 30px 0;
+}
+
+/* Карточки правил */
+.rule-card {
+padding: 20px;
+border-radius: 8px;
+text-align: center;
+transition: all 0.3s;
+}
+
+.rule-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rule-card.green {
+background: rgba(76, 175, 80, 0.1);
+border: 1px solid #4caf50;
+}
+
+.rule-card.yellow {
+background: rgba(255, 235, 59, 0.1);
+border: 1px solid #ffeb3b;
+}
+
+.rule-card.red {
+background: rgba(244, 67, 54, 0.1);
+border: 1px solid #f44336;
+}
+
+.rule-icon {
+font-size: 40px;
+margin-bottom: 15px;
+font-weight: bold;
+}
+
+.rule-text {
+color: var(--text-primary);
+font-size: 16px;
+}
+
+/* Таблица характеристик */
+.characteristics-info {
+margin-top: 40px;
+}
+
+.characteristics-info h3 {
+color: var(--text-primary);
+font-size: 22px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.attributes-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+.attributes-table th,
+.attributes-table td {
+padding: 12px 15px;
+text-align: left;
+border-bottom: 1px solid var(--divider-color);
+}
+
+.attributes-table th {
+color: var(--text-secondary);
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.attributes-table td {
+color: var(--text-primary);
+}
+
+.attributes-table tr:hover td {
+background: rgba(200, 170, 110, 0.05);
+}
+
+/* Стили для модального окна победы */
+#win-modal .modal-content {
+    text-align: center;
+    display: grid;
+    justify-self: center;
+}
+
+#win-modal .close {
+    position: relative;
+    justify-self: end;
+}
+
+#win-modal .win-title {
+    margin-bottom: 25px;
+}
+
+#win-modal .attempts-count {
+    font-size: 28px;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#win-modal .character-info {
+    background: rgba(30, 35, 40, 0.7);
+    border-radius:8px;
+    min-width: 400px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: left;
+    display:grid;
+    justify-content: center;
+}
+
+#win-modal .character-info h3 {
+    color: var(--text-secondary);
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#win-modal .character-info p {
+    color: var(--text-primary);
+    font-size: 20px;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+
+}
+
+#win-modal .character-info p strong {
+    color: var(--text-secondary);
+}
+
+#win-modal .character-info p::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-secondary);
+}
+
+/* ############################ КНОПКИ ############################ */
+
+/* Кнопка правил */
+.rules-button {
+position: fixed;
+bottom: 30px;
+right: 30px;
+padding: 12px 24px;
+background: rgba(200, 170, 110, 0.2);
+color: var(--text-secondary);
+border: 1px solid var(--text-secondary);
+border-radius: 6px;
+font-size: 18px;
+cursor: pointer;
+transition: all 0.3s;
+z-index: 999;
+font-family: 'Exo 2', sans-serif;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.rules-button:hover {
+background: rgba(200, 170, 110, 0.3);
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 /* Кнопка "Играть снова" */
+.play-again-btn {
+display: block;
+margin: 30px auto;
+padding: 15px 30px;
+background: linear-gradient(to right, #4caf50, #2e7d32);
+color: white;
+border: none;
+border-radius: 6px;
+font-size: 18px;
+cursor: pointer;
+transition: all 0.3s;
+font-family: 'Exo 2', sans-serif;
+text-transform: uppercase;
+letter-spacing: 1px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.play-again-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+background: linear-gradient(to right, #2e7d32, #4caf50);
+}
+
 .play-again-container {
-    display: none;
+display: none;
+margin-top: 30px;
+text-align: center;
+}
+
+/* ############################ АДАПТИВНОСТЬ ############################ */
+
+@media (max-width: 1200px) {
+.character-row {
+justify-content: flex-start;
+}
+}
+
+@media (max-width: 992px) {
+.rules-grid {
+grid-template-columns: 1fr;
+}
+
+text
+.modal-content {
+    width: 90%;
+}
+}
+
+@media (max-width: 768px) {
+h1 {
+font-size: 28px;
+width: 12em;
+}
+
+text
+.character-row {
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-cell,
+.character-name {
     width: 100%;
-    text-align: center;
-    margin: 30px 0;
-    padding: 20px 0;
+    max-width: 300px;
+}
+
+.character-icon {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+}
+
+#ent {
+    font-size: 22px;
+}
+}
+
+@media (max-width: 576px) {
+h1 {
+font-size: 24px;
+width: 10em;
+}
+
+text
+.modal-content {
+    padding: 20px;
+}
+
+.modal-title {
+    font-size: 24px;
+}
+
+.rule-card {
+    padding: 15px;
+}
+
+.rules-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
 }
 
 .play-again-btn {
-    background-color: var(--text-secondary);
-    color: var(--bg-dark);
-    border: none;
-    padding: 15px 40px;
-    font-size: 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
+    padding: 12px 24px;
+    font-size: 16px;
+}
 }
 
-.play-again-btn:hover {
-    background-color: #e0c060;
-    transform: translateY(-2px);
+/* ############################ СПЕЦИФИЧЕСКИЕ ЭФФЕКТЫ ############################ */
+
+/* Эффект параллакса для фона */
+body::before {
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: url(https://i.yapx.ru/ZG4oo.png);
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+z-index: -1;
+opacity: 0.9;
 }
 
-#play-again-container {
-    text-align: center;
-    margin: 30px 0;
-    padding: 20px 0;
+/* Эффект свечения для заголовка */
+h1 {
+position: relative;
 }
 
-.play-again-btn {
-    background-color: #c8aa6e;
-    color: #1e2328;
-    border: none;
-    padding: 15px 40px;
-    font-size: 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
+/* Анимация фона */
+@keyframes gradientBG {
+0% {
+background-position: 0% 50%;
 }
 
-.play-again-btn:hover {
-    background-color: #e0c060;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(200, 170, 110, 0.3);
+
+50% {
+    background-position: 100% 50%;
+}
+
+100% {
+    background-position: 0% 50%;
+}
+
+}
+
+/* Эффект при победе */
+.win-title {
+animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+
+50% {
+    transform: scale(1.05);
+}
+
+100% {
+    transform: scale(1);
+}
+}
+
+/* Эффект для правильной ячейки */
+.character-cell.green {
+animation: correctGuess 0.5s;
+}
+
+@keyframes correctGuess {
+0% {
+transform: scale(1);
+}
+
+50% {
+    transform: scale(1.05);
+}
+
+100% {
+    transform: scale(1);
+}
 }

@@ -121,7 +121,7 @@ export const characters = [
         START: ["Пассивный", "Брелок"]
     },
     {
-        character: "???",
+        character: "Blue Baby",
         SEX: "Не определен",
         LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
@@ -249,7 +249,7 @@ export const characters = [
         START: ["Ничего"]
     },
     {
-        character: "Tainted ???",
+        character: "Tainted Blue Baby",
         SEX: "Не определен",
         LIFE: "Неживой",
         HP: "Не может иметь контейнеры",
