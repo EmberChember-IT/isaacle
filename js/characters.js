@@ -11,7 +11,7 @@ export const characters = [
     {
         character: "Azazel",
         SEX: "Мужской",
-        LIFE: "Неживой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
         START: ["Карта"]
@@ -19,7 +19,7 @@ export const characters = [
     {
         character: "Apollyon",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Может иметь контейнеры",
         DLC: "Afterbirth+",
         START: ["Активка"]
@@ -46,12 +46,12 @@ export const characters = [
         LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        START: ["Активка", "Пассивный"]
+        START: ["Активка", "Пассивка"]
     },
     {
         character: "The Forgotten",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Afterbirth+",
         START: ["Ничего"]
@@ -67,15 +67,15 @@ export const characters = [
     {
         character: "Cain",
         SEX: "Мужской",
-        LIFE: "Живой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        START: ["Пассивный", "Ключ", "Брелок"]
+        START: ["Пассивка", "Ключ", "Брелок"]
     },
     {
         character: "Keeper",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Afterbirth",
         START: ["Активка", "Бомба", "Монеты", "Брелок"]
@@ -83,23 +83,23 @@ export const characters = [
     {
         character: "Lazarus",
         SEX: "Мужской",
-        LIFE: "Живой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        START: ["Пассивный", "Пилюля"]
+        START: ["Пассивка", "Пилюля"]
     },
     {
         character: "Lilith",
         SEX: "Женский",
-        LIFE: "Неживой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Afterbirth",
-        START: ["Активка", "Пассивный"]
+        START: ["Активка", "Пассивка"]
     },
     {
         character: "The Lost",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Rebirth",
         START: ["Активка", "Монеты"]
@@ -118,12 +118,12 @@ export const characters = [
         LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        START: ["Пассивный", "Брелок"]
+        START: ["Пассивка", "Брелок"]
     },
     {
         character: "Blue Baby",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Rebirth",
         START: ["Активка"]
@@ -131,7 +131,7 @@ export const characters = [
     {
         character: "Tainted Azazel",
         SEX: "Мужской",
-        LIFE: "Неживой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Карта"]
@@ -139,7 +139,7 @@ export const characters = [
     {
         character: "Tainted Isaac",
         SEX: "Мужской",
-        LIFE: "Живой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Бомба"]
@@ -147,7 +147,7 @@ export const characters = [
     {
         character: "Tainted Apollyon",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Активка"]
@@ -171,7 +171,7 @@ export const characters = [
     {
         character: "Tainted Eve",
         SEX: "Женский",
-        LIFE: "Живой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Активка"]
@@ -179,7 +179,7 @@ export const characters = [
     {
         character: "Tainted Forgotten",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
         START: ["Ничего"]
@@ -187,7 +187,7 @@ export const characters = [
     {
         character: "Tainted Judas",
         SEX: "Мужской",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
         START: ["Активка", "Монеты"]
@@ -195,7 +195,7 @@ export const characters = [
     {
         character: "Tainted Cain",
         SEX: "Мужской",
-        LIFE: "Живой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Активка", "Ключ"]
@@ -203,7 +203,7 @@ export const characters = [
     {
         character: "Tainted Keeper",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
         START: ["Бомба"]
@@ -211,7 +211,7 @@ export const characters = [
     {
         character: "Tainted Lazarus",
         SEX: "Мужской",
-        LIFE: ["Живой", "Неживой"],
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Активка"]
@@ -219,7 +219,7 @@ export const characters = [
     {
         character: "Tainted Lilith",
         SEX: "Женский",
-        LIFE: "Неживой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
         START: ["Ничего"]
@@ -227,7 +227,7 @@ export const characters = [
     {
         character: "Tainted Lost",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
         START: ["Карта", "Монеты"]
@@ -251,7 +251,7 @@ export const characters = [
     {
         character: "Tainted Blue Baby",
         SEX: "Не определен",
-        LIFE: "Неживой",
+        LIFE: "Не живой",
         HP: "Не может иметь контейнеры",
         DLC: "Repentance",
         START: ["Активка", "Бомба"]
@@ -259,10 +259,10 @@ export const characters = [
     {
         character: "Tainted Eden",
         SEX: "Не определен",
-        LIFE: "Живой",
+        LIFE: "Искаженный",
         HP: "Может иметь контейнеры",
         DLC: "Repentance",
-        START: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
+        START: ["Активка", "Пассивка", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
     },
     {
         character: "Eden",
@@ -270,7 +270,7 @@ export const characters = [
         LIFE: "Живой",
         HP: "Может иметь контейнеры",
         DLC: "Rebirth",
-        START: ["Активка", "Пассивный", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
+        START: ["Активка", "Пассивка", "Бомба", "Ключ", "Монеты", "Брелок", "Пилюля", "Карта"]
     },
 
 ];

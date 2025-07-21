@@ -212,23 +212,29 @@ class IsaacleGame {
         return row;
     }
 
-    getColorClass(key, value) {
-        if (key === 'start') {
-            const secretStart = this.secretCharacter.start;
-            
-            // Проверяем полное совпадение (зеленый)
-            const isExactMatch = 
-                secretStart.length === value.length && 
-                value.every(item => secretStart.includes(item));
-            
-            // Проверяем хотя бы одно совпадение (желтый)
-            const hasAnyMatch = 
-                value.some(item => secretStart.includes(item));
-            
-            return isExactMatch ? 'green' : hasAnyMatch ? 'yellow' : 'red';
+getColorClass(key, value) {
+    if (key === 'START') {  // Обратите внимание: ключ 'START' в верхнем регистре (как в ваших данных)
+        const secretStart = this.secretCharacter.START.map(item => item.trim().toLowerCase());
+        const userStart = value.map(item => item.trim().toLowerCase());
+
+        // Проверка полного совпадения (зеленый)
+        const isExactMatch = 
+            secretStart.length === userStart.length && 
+            secretStart.every((item, index) => item === userStart[index]);
+
+        if (isExactMatch) {
+            return 'green';
         }
-        return this.secretCharacter[key] === value ? 'green' : 'red';
+
+        // Проверка хотя бы одного совпадения (желтый)
+        const hasAnyMatch = userStart.some(item => secretStart.includes(item));
+
+        return hasAnyMatch ? 'yellow' : 'red';
     }
+    
+    // Для не-массивных свойств (простое сравнение)
+    return this.secretCharacter[key] === value ? 'green' : 'red';
+}
 
     endGame(isWin) {
         this.gameOver = true;
