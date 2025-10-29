@@ -1,5 +1,8 @@
 import { characters } from './characters.js';
-
+// Обработчик кнопки возврата в меню
+document.getElementById('menu-btn').addEventListener('click', () => {
+    window.location.href = 'menu.html';
+});
 class IsaacleGame {
     constructor() {
         // Кэширование DOM-элементов

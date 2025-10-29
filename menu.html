@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaacle - Главное меню</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="/assets/icons/cain.png">
+</head>
+<body class="menu-page">
+    <div class="menu-container">
+        <h1 class="title">ISAACLE</h1>
+        
+        <div class="menu-buttons">
+            <a href="index.html" class="menu-btn">
+                <i class="fas fa-gamepad"></i>
+                Играть
+            </a>
+            
+            <a href="#" id="rules-btn" class="menu-btn">
+                <i class="fas fa-book"></i>
+                Правила
+            </a>
+            
+            <a href="#" class="menu-btn">
+                <i class="fas fa-users"></i>
+                Сообщество
+            </a>
+            
+            <a href="#" class="menu-btn">
+                <i class="fas fa-cog"></i>
+                Настройки
+            </a>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://discordapp.com/users/Ember_Chember#7024" class="social-icon" target="_blank">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://github.com/EmberChember-IT" class="social-icon" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://youtube.com/@emberchember?si=O4LjDi_bUupmm5XM" class="social-icon" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <div class="support"><i>Supported by ChatGPT & DeepSeek AI</i></div>
+    </div>
+
+    <!-- Модальное окно правил (такое же как в index.html) -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="modal-title">ПРАВИЛА ИГРЫ</h2>
+                <p class="modal-subtitle">Цвет ячейки соответствует тому, насколько точно угадана характеристика.</p>
+                <div class="rules-grid">
+                    <div class="rule-card green">
+                        <div class="rule-icon">✓</div>
+                        <div class="rule-text">Полное совпадение характеристики</div>
+                    </div>
+                    <div class="rule-card yellow">
+                        <div class="rule-icon">~</div>
+                        <div class="rule-text">Частичное совпадение</div>
+                    </div>
+                    <div class="rule-card red">
+                        <div class="rule-icon">✗</div>
+                        <div class="rule-text">Несовпадение характеристики</div>
+                    </div>
+                </div>
+
+                <div class="characteristics-info">
+                    <h3>Описание характеристик:</h3>
+                    <table class="attributes-table">
+                        <thead>
+                            <tr>
+                                <th>Характеристика</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>HP (здоровье)</b></td>
+                                <td>Возможность иметь контейнеры здоровья</td>
+                                <td>Может иметь, Не может иметь</td>
+                            </tr>
+                            <tr>
+                                <td><b>DLC (дополнение)</b></td>
+                                <td>Первое появление персонажа</td>
+                                <td>Rebirth, Afterbirth, Afterbirth+, Repentance</td>
+                            </tr>
+                            <tr>
+                                <td><b>START (старт)</b></td>
+                                <td>Стартовые предметы персонажа</td>
+                                <td>Активка, Пассивка, Бомба, Ключ, Монеты, Брелок, Пилюля, Карта</td>
+                            </tr>
+                            <tr>
+                                <td><b>LIFE (жизнь)</b></td>
+                                <td>Статус тела</td>
+                                <td>Живой, Неживой, Искаженный</td>
+                            </tr>
+                            <tr>
+                                <td><b>SEX (пол)</b></td>
+                                <td>Пол персонажа</td>
+                                <td>Мужской, Женский, Неопределен</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <h3>Дополнительные пояснения:</h3>
+                    <p>Возможность иметь <b style="color: #c8aa6e">контейнеры здоровья</b>, означает, что персонаж может получать красные контейнеры сердец.<p>
+                    <p><b style="color: #c8aa6e">Стартовые предметы:</b> 
+                        <br>"<b style="color: #c8aa6e">Активка</b>" - активный предмет или переносной активный инструмент порченых персонажей (мешок Каина, переворот Лазаря и т.д.); <br>"<b style="color: #c8aa6e">Пассивка</b>" - полноценный пассивный предмет (не считаются модификации тела порченых персонажей).<p>
+                    <p><b style="color: #c8aa6e">Искаженный статус</b> тела значит, что тело персонажа повреждено или изменено иным способом. Например отсутствие глаз у Каина и Порченой Лилит, или изменение формы у Евы и Порченного Лазаря.<p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Обработчик для кнопки правил
+        document.getElementById('rules-btn').onclick = function() {
+            document.getElementById('rules-modal').style.display = 'block';
+        }
+        
+        // Закрытие модального окна
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('rules-modal').style.display = 'none';
+        }
+        
+        // Закрытие при клике вне окна
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('rules-modal')) {
+                document.getElementById('rules-modal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
